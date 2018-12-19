@@ -1,0 +1,276 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Mastermain.master.cs" Inherits="OSCS.Mastermain" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>OSCS</title>
+    <%-- <link runat="server" rel="shortcut icon" href="Images/.ico" type="image/x-icon"/>
+    <link runat="server" rel="icon" href="Images/.ico" type="image/ico"/>--%>
+
+    <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="css/bootstrap-timepicker.css" rel="stylesheet" />
+    <link href="css/calendar-blue.css" rel="stylesheet" />
+
+    <link href="css/bootstrap-timepicker.min.css" rel="stylesheet" />
+    <link href="css/checkboxcss.css" rel="stylesheet" />
+    <link href="css/UploadCss.css" rel="stylesheet" />
+    <link href="css/Panelcss.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+    <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="css/owl/owl.carousel.css" rel="stylesheet" type="text/css" />
+    <link href="css/owl/owl.theme.css" rel="stylesheet" type="text/css" />
+    <link href="css/owl/owl.transitions.css" rel="stylesheet" type="text/css" />
+    <!-- Custom CSS -->
+
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu:300,400,700' rel='stylesheet'
+        type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,700italic,400,700"
+        rel="stylesheet" type="text/css" />
+    <!-- Required plugin - Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/Modalcss.css" rel="stylesheet" />
+    <link href="css/gridhide.css" rel="stylesheet" />
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.aspx"><i class="fa fa-heartbeat"></i>Home </a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <!-- Left nav -->
+                    <ul class="nav navbar-nav navbar-right">
+
+
+                        <li class="dropdown" runat="server" id="Li3">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false" runat="server">About us
+                                <span id="Span4" class="caret" runat="server"></span>
+                            </a>
+                            <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
+                                <li><a href="#">Mission</a></li>
+                                <li><a href="#">Staff Listing</a></li>
+                                <li><a href="#">Research Program</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" runat="server" id="Li1">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false" runat="server">For Professionals
+                               <span id="Span2" class="caret" runat="server"></span>
+                            </a>
+                            <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
+                                <li><a href="#">How to refer</a></li>
+                                <li><a href="#">Useful Links</a></li>
+                                <li><a href="#">Fellowship</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown" runat="server" id="LSurvey">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                                role="button" aria-haspopup="true" aria-expanded="false" runat="server">For Patients
+                                 <span id="Span3" class="caret" runat="server"></span>
+                            </a>
+                            <ul class="dropdown-menu" data-dropdown-in="fadeInUp" data-dropdown-out="fadeOutDown">
+                                <li><a data-toggle="modal" data-backdrop="false" data-target="#myModal">Link to Mike Evans Back Pain Video</a></li>
+                                <li><a href="LoginCredentials.aspx">Login</a></li>
+                                <li><a href="Patient.aspx">Questionnaire with Registration</a></li>
+                                <li><a data-toggle="modal" data-backdrop="false" data-target="#myModalHospitalID">Questionnaire with ID</a></li>
+                                <li><a data-toggle="modal" data-backdrop="false" data-target="#myModalwithoutRegistration">Questionnaire without Registration</a></li>
+                                <li><a href="#">Surgical Information</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <!-- Modal -->
+
+
+                    </ul>
+                  
+                    <script type="text/javascript">
+                        $('#myModal').on('shown.bs.modal', function () {
+                            $('#video1')[0].play();
+                        })
+                        $('#myModal').on('hidden.bs.modal', function () {
+                            $('#video1')[0].pause();
+                    </script>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Mike Evans Back Pain Video</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <video controls id="video1" style="width: 100%; height: auto; margin: 0 auto; frameborder: 0;">
+                                        <source src="Images/LowBackPain.mp4" type="video/mp4">
+                                        Your browser doesn't support HTML5 video tag.
+                                    </video>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%--</div>--%>
+                <div class="modal fade" id="myModalHospitalID" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content col-xs-12">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body" style="text-align: center;">
+                                <p>
+                                    Please enter your hospital given ID
+                                </p>
+                                <asp:TextBox ID="HospitalID" runat="server" placeholder="HopitalID" CssClass="form-control" oninvalid="this.setCustomValidity('Please Enter your provided ID')" oninput="setCustomValidity('')"></asp:TextBox>
+                                <asp:LinkButton ID="LinkButton6" CssClass="btn btn-info btn-lg" runat="server" OnClick="btnIsIDValied_Click">Go to Questionnaire</asp:LinkButton>
+
+
+                                <div class="modal-footer" style="text-align: center;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="myModalwithoutRegistration" role="dialog">
+                    <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <div class="modal-body">
+                                <p>
+                                    PRIVACY POLICY
+                                </p>
+                                <p>
+                                    The standard Lorem Ipsum passage, used since the 1500s
+                                </p>
+                                <p>
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                </p>
+                                <p>
+                                    Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                                </p>
+                                <p>
+                                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+                                </p>
+                                <p>
+                                    1914 translation by H. Rackham
+                                </p>
+                                <p>
+                                    "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?"
+                                </p>
+                                <p>
+                                    Section 1.10.33 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+                                </p>
+                                <p>
+                                    "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat."
+                                </p>
+                                <p>
+                                    1914 translation by H. Rackham
+                                </p>
+                                <p>
+                                    "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+                                </p>
+
+                                <div class="modal-footer">
+                                    <div class="row">
+                                        <div class="col-xs-6 col-sm-4">
+                                            <asp:LinkButton ID="LinkButton4" CssClass="btn btn-info btn-lg" runat="server" OnClick="btnQwithoutRRE_Click">I Refuse, return to homepage</asp:LinkButton>
+
+                                        </div>
+                                        <div class="col-xs-6 col-sm-4"></div>
+                                        <div class="col-xs-6 col-sm-4">
+                                            <asp:LinkButton ID="LinkButton3" CssClass="btn btn-info btn-lg" runat="server" OnClick="btnQwithoutRGO_Click">I Accept, go to Questionnaire</asp:LinkButton>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/wow.min.js" type="text/javascript"></script>
+        <script src="js/tutorial.js"></script>
+        <script src="css/owl/owl.carousel.js" type="text/javascript"></script>
+        <!-- SmartMenus jQuery plugin -->
+        <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+        <!-- SmartMenus jQuery Bootstrap Addon -->
+        <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>
+        <script src="js/contact.js" type="text/javascript"></script>
+        <script src="js/bootstrap-timepicker.js"></script>
+        <script src="js/bootstrap-timepicker.min.js"></script>
+
+        <script src="js/jquery.backstretch.js"></script>
+
+        <script type="text/javascript">
+            'use strict';
+
+            /* ========================== */
+            /* ::::::: Backstrech ::::::: */
+            /* ========================== */
+            // You may also attach Backstretch to a block-level element
+            $.backstretch(
+                [
+                    "/Images/1.jpg",
+                    //"Images/2.jpg",
+                    "/Images/3.jpg",
+                    "/Images/4.jpg",
+                    "/Images/5.jpg",
+                    "/Images/6.jpg",
+                    "/Images/7.jpg",
+                    "/Images/8.jpg",
+                    "/Images/9.jpg",
+                    "/Images/10.jpg",
+                    "/Images/11.jpg",
+                    "/Images/12.jpg",
+                    "/Images/13.jpg",
+                    "/Images/14.jpg",
+                    "/Images/15.jpg",
+                ],
+
+                {
+                    duration: 9000,
+                    fade: 1500
+                }
+            );
+        </script>
+
+    </form>
+
+</body>
+</html>
